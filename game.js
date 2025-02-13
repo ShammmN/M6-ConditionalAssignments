@@ -3,25 +3,27 @@ let randomNumber = Math.floor(Math.random() * 10) + 1;
 let userGuess;
 let attempts = 0;
 
-// Prompt user for a number between 1 and 10, or type 999 to exit.
-userGuess = Number(prompt("Guess a number between 1 to 10 or 999 to exit: "));
 
-while(userGuess != 999 ){
-    attempts += 1 
-    if(userGuess == randomNumber ){
-        alert(`Congratulations, you've guessed it in ${attempts} tries!`);
-        break;
-    } 
-    else if (userGuess > randomNumber){
+subButton.onclick = function guessingGame(){
+    // Prompt user for a number between 1 and 10, or type 999 to exit.
+    userGuess = Number(prompt("Guess a number between 1 to 10 or 999 to exit: "));
+    while(userGuess != 999 ){
+        attempts += 1 
+        if(userGuess == randomNumber ){
+            alert(`Congratulations, you've guessed it in ${attempts} tries!`);
+            break;
+        } 
+        else if (userGuess > randomNumber){
             userGuess = Number(prompt("Too high! Guess again:")); 
-    }    
-    else if(userGuess < randomNumber){
+        }    
+        else if(userGuess < randomNumber){
             userGuess = Number(prompt("Too low! Guess again:")); 
-    }
-    else if(userGuess != randomNumber){
+        }
+        else if(userGuess != randomNumber){
             userGuess = Number(prompt("Invalid input! Guess again:")); 
-    }
+        }
 
+    }
 }
 
 
